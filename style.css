@@ -35,6 +35,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
+    transition: transform 0.5s ease;
 }
 
 .image {
@@ -45,7 +46,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: 1s ease;
+    transition: filter 0.5s ease, transform 0.5s ease;
     filter: brightness(0.7); /* Adds the transparent black overlay */
 }
 
@@ -81,18 +82,24 @@
     background: none;
     border: none;
     cursor: pointer;
-    transition: opacity 1s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     opacity: 0;
 }
 
 /* Hover effect */
 .image-bg:hover .image {
     filter: grayscale(100%) blur(5px);
+    transform: scale(1.05);
 }
+
+/* .image-bg:hover {
+    transform: scale(1.00);
+} */
 
 .image-bg:hover .know-more-button {
     display: block;
     opacity: 1;
+    transform: translateY(0);
 }
 
 /* Media queries for responsiveness */
